@@ -4,3 +4,5 @@
 
 azure-functions
 azure-devops
+opencensus
+opencensus-ext-azure
