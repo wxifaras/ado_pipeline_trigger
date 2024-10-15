@@ -24,6 +24,7 @@ This project uses a `.env` file to manage sensitive configuration for Azure DevO
     AZURE_DEVOPS_TOKEN=my-secret-token
     PIPELINE_IDS=1,2,3
     PROJECT_NAME=my-project
+    APP_INSIGHTS_INSTRUMENTATION_KEY=<your app insights instrumentation key>
     ```
 
 3. Do **not** commit your `.env` file to version control. The `.env` file is included in `.gitignore` for security reasons.
