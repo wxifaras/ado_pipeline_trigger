@@ -27,3 +27,24 @@ This project uses a `.env` file to manage sensitive configuration for Azure DevO
     ```
 
 3. Do **not** commit your `.env` file to version control. The `.env` file is included in `.gitignore` for security reasons.
+
+## Azure Function HTTP Triggers
+
+This project includes an Azure Function HTTP trigger that interact with Azure DevOps pipelines. The trigger uses environment variables and handle pipeline authorization based on the IDs defined in the `PIPELINE_IDS` environment variable.
+
+### `ado_pipeline_http_trigger`
+
+This function is an HTTP trigger that allows triggering a single Azure DevOps pipeline based on the `pipeline_id` provided in the request.
+
+- **Route:** `ado_pipeline_http_trigger`
+- **Method:** `POST`
+- **Query Parameters / Body:**
+  - `pipeline_id`: (Required) The ID of the pipeline to trigger. This can be passed either as a query parameter or in the request body as JSON.
+
+- **Environment Variables Used:**
+  - `PIPELINE_IDS`: A comma-separated list of allowed pipeline IDs that can be triggered (e.g., `1,2,3`). The function validates whether the provided `pipeline_id` is authorized based on this list.
+
+- **Example Request (POST):**
+
+  ```http
+  POST /ado_pipeline_http_trigger?pipeline_id=1
