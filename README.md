@@ -1,4 +1,6 @@
-# ado_pipeline_trigger
+# Azure DevOps Pipeline Trigger Functions
+
+This project provides Azure Functions that allow you to trigger Azure DevOps pipelines via HTTP requests. The environment is configured using a `.env` file and functions are designed to handle specific pipelines based on the provided pipeline IDs.
 
 ## Environment Variables
 
