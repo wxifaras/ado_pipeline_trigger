@@ -24,6 +24,7 @@ This project uses a `.env` file to manage sensitive configuration for Azure DevO
     AZURE_DEVOPS_TOKEN=my-secret-token
     PIPELINE_IDS=1,2,3
     PROJECT_NAME=my-project
+    APP_INSIGHTS_INSTRUMENTATION_KEY=<your app insights instrumentation key>
     ```
 
 3. Do **not** commit your `.env` file to version control. The `.env` file is included in `.gitignore` for security reasons.
@@ -40,9 +41,6 @@ This function is an HTTP trigger that allows triggering a single Azure DevOps pi
 - **Method:** `POST`
 - **Query Parameters / Body:**
   - `pipeline_id`: (Required) The ID of the pipeline to trigger. This can be passed either as a query parameter or in the request body as JSON.
-
-- **Environment Variables Used:**
-  - `PIPELINE_IDS`: A comma-separated list of allowed pipeline IDs that can be triggered (e.g., `1,2,3`). The function validates whether the provided `pipeline_id` is authorized based on this list.
 
 - **Example Request (POST):**
 
