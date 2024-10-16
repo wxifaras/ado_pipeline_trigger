@@ -42,9 +42,6 @@ This function is an HTTP trigger that allows triggering a single Azure DevOps pi
 - **Query Parameters / Body:**
   - `pipeline_id`: (Required) The ID of the pipeline to trigger. This can be passed either as a query parameter or in the request body as JSON.
 
-- **Environment Variables Used:**
-  - `PIPELINE_IDS`: A comma-separated list of allowed pipeline IDs that can be triggered (e.g., `1,2,3`). The function validates whether the provided `pipeline_id` is authorized based on this list.
-
 - **Example Request (POST):**
 
   ```http
