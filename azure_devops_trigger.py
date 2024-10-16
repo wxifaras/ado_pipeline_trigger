@@ -1,4 +1,3 @@
-import logging
 from azure.devops.connection import Connection # type: ignore
 from msrest.authentication import BasicAuthentication # type: ignore
 from app_logger import get_logger
