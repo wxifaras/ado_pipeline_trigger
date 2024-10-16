@@ -13,10 +13,10 @@ logger = get_logger(__name__)
 # List of allowed pipeline IDs from environment
 allowed_pipeline_ids = list(map(int, os.getenv('PIPELINE_IDS', '').split(',')))
 
-@app.route(route="pipeline_http_trigger")
-def pipeline_http_trigger(req: func.HttpRequest) -> func.HttpResponse:
+@app.route(route="pipeline_trigger")
+def pipeline_trigger(req: func.HttpRequest) -> func.HttpResponse:
     pipeline_id = req.params.get('pipeline_id')
-    logger.info(f'Azure HTTP trigger function pipeline_http_trigger processed a request. Pipeline ID: {pipeline_id}.')
+    logger.info(f'Azure HTTP trigger function pipeline_trigger processed a request. Pipeline ID: {pipeline_id}.')
         
     if not pipeline_id:
         logger.error("Invalid request. No valid pipeline_id found.")
@@ -48,10 +48,10 @@ def pipeline_http_trigger(req: func.HttpRequest) -> func.HttpResponse:
             status_code=200
         )
 
-@app.route(route="check_pipeline_status")
-def check_pipeline_status(req: func.HttpRequest) -> func.HttpResponse:
+@app.route(route="check_pipeline_status_trigger")
+def check_pipeline_status_trigger(req: func.HttpRequest) -> func.HttpResponse:
     pipeline_id = req.params.get('pipeline_id')
-    logger.info(f'Azure HTTP trigger function check_pipeline_status processed a request. Pipeline ID: {pipeline_id}.')
+    logger.info(f'Azure HTTP trigger function check_pipeline_status_trigger processed a request. Pipeline ID: {pipeline_id}.')
 
     if not pipeline_id:
         logger.error("Invalid request. No valid pipeline_id found.")
