@@ -40,7 +40,7 @@ This function is an HTTP trigger that allows triggering a single Azure DevOps pi
 - **Route:** `pipeline_trigger`
 - **Method:** `POST`
 - **Query Parameters:**
-  - `pipeline_id`: (Required) The ID of the pipeline to trigger.
+    - `pipeline_id`: (Required) The ID of the pipeline to trigger.
 
 - **Example Request (POST):**
 
@@ -54,7 +54,7 @@ This function is an HTTP trigger that allows triggering a single Azure DevOps pi
  - **Route:** `check_pipeline_status_trigger`
  - **Method:** `GET`
  - **Query Parameters:**
-  - `pipeline_id`: (Required) The ID of the pipeline to check.
+    - `pipeline_id`: (Required) The ID of the pipeline to check.
 
 - **Example Request (GET):**
 
